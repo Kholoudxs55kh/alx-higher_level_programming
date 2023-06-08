@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+import os, string
+os.write(1, string.ascii_uppercase.encode() + b'\n')
