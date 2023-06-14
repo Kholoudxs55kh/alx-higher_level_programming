@@ -14,6 +14,6 @@ def square_matrix_simple(matrix=[]):
     for D1 in matrix:
         listt = []
         for D2 in D1:
-            row.append(D2**2)
+            listt.append(D2**2)
         mat_.append(listt)
     return mat_
