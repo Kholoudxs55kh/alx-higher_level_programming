@@ -89,3 +89,18 @@ Div is NaN:
         ...
     TypeError: div must be a number
 
+1D:
+    >>> matrix = [
+    ... [15, 25, 35]
+    ... ]
+    >>> matrix_divided(matrix, 5.0)
+    [[3.0, 5.0, 7.0]]
+
+Not a List:
+    >>> matrix = (
+    ... (15, 25, 35), (50, 55, 60)
+    ... )
+    >>> matrix_divided(matrix, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
