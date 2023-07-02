@@ -1,0 +1,45 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Passing non-str:
+    >>> text_indentation(44)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+
+Only the Chars "? .":
+    >>> text_indentation("?.")
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+Passing None:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Passing Empty str:
+    >>> text_indentation("")
+
+Passing Newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Passing No args.:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Passing No Chars:
+    >>> text_indentation("Cukur Evemiz")
+    Cukur Evemiz
+
