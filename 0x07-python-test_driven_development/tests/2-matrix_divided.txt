@@ -1,0 +1,91 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Regular Test:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, 5)
+    [[3.0, 5.0, 7.0], [10.0, 11.0, 12.0]]
+
+Div equals zero:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Div is a float:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, 5.0)
+    [[3.0, 5.0, 7.0], [10.0, 11.0, 12.0]]
+
+Div is Not a Num:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, "kholoud")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Empty Para:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Lists with diff Size:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60, 65]
+    ... ]
+    >>> matrix_divided(matrix, 5.0)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+A List Containing a non Num:
+    >>> matrix = [
+    ... [15, 25, "cukur"], [50, 'k', 60]
+    ... ]
+    >>> matrix_divided(matrix, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+skipping matrix para:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(, 5)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+skipping div para:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Div is NaN:
+    >>> matrix = [
+    ... [15, 25, 35], [50, 55, 60]
+    ... ]
+    >>> matrix_divided(matrix, "nan")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
