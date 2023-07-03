@@ -79,4 +79,3 @@ class Rectangle:
             if high != self.__height - 1:
                 recta += "\n"
         return recta
-
