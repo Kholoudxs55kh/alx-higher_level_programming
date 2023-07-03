@@ -78,7 +78,7 @@ class Rectangle:
         recta = ""
         for high in range(self.__height):
             for wid in range(self.__width):
-                recta += Rectangle.print_symbol
+                recta += str(self.print_symbol)
             if high != self.__height - 1:
                 recta += "\n"
         return recta
