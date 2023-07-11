@@ -6,6 +6,23 @@ Using ``BaseGeometry``
 
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+Area Exeption:
+	 >>> BG = BaseGeometry()
+	 >>> BG.area()
+	 Traceback (most recent call last):
+	 ...
+	 Exception: area() is not implemented
+
+Args for area:
+	 >>> BG.area(5)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: area() takes 1 positional argument but 2 were given
+
+Int Pass:
+	>>> BG = BaseGeometry()
+	>>> BG.integer_validator("my_int", 12)
+
 Non-integer:
 	>>> BG = BaseGeometry()
 	>>> BG.integer_validator("float", 5.5)
@@ -34,3 +51,11 @@ No args:
 	 Traceback (most recent call last):
          ...
 	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+1 arg:
+	 >>> BG.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
