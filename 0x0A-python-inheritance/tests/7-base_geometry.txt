@@ -1,0 +1,36 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Non-integer:
+	>>> BG = BaseGeometry()
+	>>> BG.integer_validator("float", 5.5)
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+	>>> BG.integer_validator("string", "kholoud")
+        Traceback (most recent call last):
+        ...
+        TypeError: string must be an integer
+
+Integer is 0:
+	 >>> BG.integer_validator("integer", 0)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+
+integer is Neg;
+	 >>> BG.integer_validator("integer", -5)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+
+No args:
+	 >>> BG.integer_validator()
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
