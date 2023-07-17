@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ task 0 """
 import json
+import csv
+from os import path
 
 
 class Base:
@@ -45,3 +47,48 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns Instance with all attributes already set"""
+
+        if cls.__name__ == "Rectangle":
+            rec = cls(1, 1)
+        else:
+            rec = cls(1)
+        rec.update(**dictionary)
+        return rec
+
+    @classmethod
+    def load_from_file(cls):
+        """returns List of instances"""
+
+        filename = cls.__name__ + ".json"
+        _list = []
+
+        if path.isfile(filename):
+            with open(filename) as filee:
+                _output = cls.from_json_string(filee.read())
+            for i in _output:
+                _list.append(cls.create(**i))
+        return _list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes the CSV string representation of list_objs to a file"""
+
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, mode="w", newline="") as filee:
+            csv_writer = csv.writer(filee)
+
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == "Square":
+                    row = [obj.id, obj.size, obj.x, obj.y]
+
+                csv_writer.writerow(row)
