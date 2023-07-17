@@ -114,3 +114,11 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         assert output.getvalue() == " ###\n ###\n"
 
+    def test_str(self):
+        """Tests __str__"""
+        output = StringIO()
+        sys.stdout = output
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        print(r1)
+        sys.stdout = sys.__stdout__
+        assert output.getvalue() == "[Rectangle] (12) 2/1 - 4/6\n"
