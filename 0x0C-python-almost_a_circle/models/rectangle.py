@@ -76,7 +76,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
-    @width.setter
+    @y.setter
     def y(self, value):
         """
            Setter
