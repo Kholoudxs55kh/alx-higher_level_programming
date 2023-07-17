@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ task 2 """
-
-
 from models.base import Base
 
 
@@ -44,7 +42,6 @@ class Rectangle(Base):
         @getter
         """
         return self.__y
-
 
     @width.setter
     def width(self, value):
@@ -128,6 +125,3 @@ class Rectangle(Base):
 
         for attribute_name, value in zip(attribute_names, args):
             setattr(self, attribute_name, value)
-
-
-
