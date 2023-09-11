@@ -7,7 +7,7 @@ let result = 1;
 
 if (isNaN(value)) {
   console.log('1');
-} else if (value === '1') {
+} else if (value === '1' || value === '0') {
   console.log(1);
 } else {
   factorial(value);
