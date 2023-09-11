@@ -8,7 +8,7 @@ const value2 = args[idx + 1]
 if (typeof value1 !== 'undefined' && typeof value1 !== 'undefined') {
   console.log(value1 + ' is ' + value2);
 } else if (typeof value1 !== 'undefined' && typeof value1 === 'undefined') {
-    console.log(value1 + ' is ' + typeof value2);
+  console.log(value1 + ' is ' + typeof value2);
 } else {
   console.log('undefined is undefined');
 }
