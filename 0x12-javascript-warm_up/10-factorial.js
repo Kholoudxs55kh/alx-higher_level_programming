@@ -6,7 +6,7 @@ const value = args[idx];
 let result = 1;
 
 if (isNaN(value) || typeof value === 'undefined') {
-  console.log('NaN');
+  console.log('1');
 } else {
   factorial(value);
 }
@@ -15,6 +15,6 @@ function factorial (value) {
     result *= value;
     return factorial(value - 1);
   } else {
-    console.log(result);
-  }
+      console.log(result);
+    }
 }
