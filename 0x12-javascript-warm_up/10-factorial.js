@@ -5,7 +5,7 @@ const idx = args.indexOf('10-factorial.js') + 1;
 const value = args[idx];
 let result = 1;
 
-if (isNaN(value) || typeof value === 'undefined') {
+if (isNaN(value)) {
   console.log('1');
 } else {
   factorial(value);
