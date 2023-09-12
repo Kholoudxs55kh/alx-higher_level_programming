@@ -1,8 +1,6 @@
 #!/usr/bin/node
 
+let count = 0;
 exports.logMe = function (item) {
-  const arr = [];
-  arr.push(item);
-  const count = arr.length;
-  return (console.log(`${count}: ${item}`));
+  return (console.log(`${count++}: ${item}`));
 };
