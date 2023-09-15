@@ -15,7 +15,7 @@ if __name__ == '__main__':
         db=argv[3]
     )
     cur = conn.cursor()
-    cur.excute('SELECT * from states')
+    cur.execute('SELECT * from states')
 
     for rw in cur.fetchall():
         print(rw)
