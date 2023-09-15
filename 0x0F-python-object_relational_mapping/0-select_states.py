@@ -5,14 +5,6 @@ from sys import argv
 import MySQLdb
 
 
-def close_db(db):
-    """to close all at once
-    and to be reusable"""
-    curr = db.cursor()
-    db.close()
-    curr.close()
-
-
 if __name__ == '__main__':
 
     conn = MySQLdb.connect(
@@ -28,4 +20,5 @@ if __name__ == '__main__':
     for rw in cur.fetchall():
         print(rw)
 
-    close_db(conn)
+    cur.close()
+    conn.close()
