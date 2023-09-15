@@ -14,9 +14,7 @@ if __name__ == '__main__':
         db=argv[3]
     )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states\
-                 WHERE BINARY name = %s\
-                 ORDER BY id ASC", (argv[4]))
+    cur.execute("SELECT * FROM states WHERE BINARY name=%s", (argv[4]))
 
     rows = cur.fetchall()
     for rw in rows:
