@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all states with a name starting with N"""
-
+"""Safe from sql injection"""
 from sys import argv
 import MySQLdb
 
@@ -16,7 +15,7 @@ if __name__ == '__main__':
     )
     cur = conn.cursor()
     cur.execute("SELECT * FROM states\
-                 WHERE name LIKE BINARY '%s'\
+                 WHERE name = %s\
                  ORDER BY id ASC", argv[4])
 
     rows = cur.fetchall()
