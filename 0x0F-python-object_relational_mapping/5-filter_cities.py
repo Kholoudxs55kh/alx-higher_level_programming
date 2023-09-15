@@ -25,7 +25,7 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC', (argv[4]))
     cur.execute('SELECT ')
     rows = cur.fetchall()
-    output = ()
+    output = []
     for rw in rows:
         output.append(rw[1])
     print(', '.join(output))
