@@ -19,14 +19,14 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
 
-    cur.execute('SELECT cities.id, cities.name FROM cities\
+    cur.execute('SELECT cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
-                WHERE states.name = %s\
+                WHERE states.name=%s\
                 ORDER BY cities.id ASC', (argv[4]))
     rows = cur.fetchall()
     output = []
     for rw in rows:
-        output.append(rw[1])
+        output.append(rw[0])
     print(', '.join(output))
 
     cur.close()
