@@ -15,9 +15,10 @@ if __name__ == '__main__':
         db=argv[3]
     )
     cur = conn.cursor()
-    cur.execute('SELECT * from states')
+    cur.execute('SELECT * FROM states')
 
-    for rw in cur.fetchall():
+    rows = cur.fetchall()
+    for rw in rows:
         print(rw)
 
     cur.close()
