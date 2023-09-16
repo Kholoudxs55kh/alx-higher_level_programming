@@ -18,7 +18,7 @@ if __name__ == '__main__':
     session = Session()
 
     states = session.query(State).order_by(State.id)
-    states.filter(State.name.contains('a')).all()
-    for state in states:
+    statee = states.filter(State.name.contains('a')).all()
+    for state in statee:
         print("{}: {}".format(state.id, state.name))
     session.close()
