@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# Python script that takes in a URL and an email, sends a POST request
+""" Python script that takes in a URL and an email, sends a POST request
 # and displays the body of the response
-
+"""
 if __name__ == '__main__':
     from urllib.request import urlopen, Request
     from urllib.parse import urlencode

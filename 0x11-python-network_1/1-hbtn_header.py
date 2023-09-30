@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# Python script that takes in a URL, sends a request to the URL and displays the value
-
+""" Python script that takes in a URL,sends request to URL and displays the value
+"""
 if __name__ == '__main__':
     import urllib.request
     from sys import argv
