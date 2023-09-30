@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Python script that takes in a URL,sends request to URL and displays the value
+""" Python script that takes in a URL,sends request to URL and displays value
 """
 if __name__ == '__main__':
     import urllib.request
